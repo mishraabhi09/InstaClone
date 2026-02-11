@@ -4,7 +4,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import cors from "cors";
-const allowedOrigins = ["https://insta-clone-xmdc.vercel.app/"];
+// const allowedOrigins = ["https://insta-clone-xmdc.vercel.app/"];
+const allowedOrigins = ["https://insta-clone-7cyj.vercel.app/"];
 
 import { dirname } from "path";
 import { fileURLToPath } from "url";
