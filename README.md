@@ -91,3 +91,4 @@ npm start
 ![Post Page](https://user-images.githubusercontent.com/67114280/173548696-2667fddf-4843-45a8-aa72-f0ae7a1029e7.svg)
 
 ![Profile Page](https://user-images.githubusercontent.com/67114280/173548132-1433a1e5-d2b3-4741-9ad1-8dc3b6449a5e.svg)
+  <!-- "proxy": "https://insta-clone-7cyj.vercel.app" -->
