@@ -3,6 +3,9 @@ import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 
+import cors from "cors";
+const allowedOrigins = ["https://insta-clone-xmdc.vercel.app/"];
+
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -29,6 +32,8 @@ import mongoSanitize from "express-mongo-sanitize";
 
 const app = express();
 
+
+app.use(cors({ origin: allowedOrigins }));
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.use(express.static(path.resolve(__dirname, "./client/build")));
