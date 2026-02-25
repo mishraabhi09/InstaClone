@@ -48,5 +48,5 @@
     ]
   },
   
-  "proxy": "https://insta-clone-c6nb.vercel.app/"
+  "proxy": "http://localhost:5000"
 }

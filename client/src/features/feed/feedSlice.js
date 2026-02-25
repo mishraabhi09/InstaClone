@@ -18,7 +18,7 @@ export const createFeed = createAsyncThunk(
   "feed/createFeed",
   async (feed, thunkAPI) => {
     try {
-      const resp = await axios.post(`/api/v1/feed`, feed, {
+      const resp = await axios.post(`https://instaclone-j0b8.onrender.com/api/v1/feed`, feed, {
         headers: {
           authorization: `Bearer ${getUserFromLocalStorage().token}`,
         },
@@ -39,7 +39,7 @@ export const followUserFeeds = createAsyncThunk(
   "feed/followUserFeeds",
   async (_, thunkAPI) => {
     try {
-      const resp = await axios.get(`api/v1/feed/explore/getFollowing`, {
+      const resp = await axios.get(`https://instaclone-j0b8.onrender.com/api/v1/feed/explore/getFollowing`, {
         headers: {
           authorization: `Bearer ${getUserFromLocalStorage().token}`,
         },
@@ -55,7 +55,7 @@ export const feedLikeDislike = createAsyncThunk(
   "feed/feedLikeDislike",
   async ({ postId }, thunkAPI) => {
     try {
-      const resp = axios.patch(`/api/v1/feed/like/${postId}`);
+      const resp = axios.patch(`https://instaclone-j0b8.onrender.com/api/v1/feed/like/${postId}`);
       return resp.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.msg);
@@ -67,7 +67,7 @@ export const getFeed = createAsyncThunk(
   "feed/getFeed",
   async (id, thunkAPI) => {
     try {
-      const resp = await axios.get(`/api/v1/feed/${id}`, {
+      const resp = await axios.get(`https://instaclone-j0b8.onrender.com/api/v1/feed/${id}`, {
         headers: {
           authorization: `Bearer ${getUserFromLocalStorage().token}`,
         },
@@ -84,7 +84,7 @@ export const commentOnFeed = createAsyncThunk(
   "feed/commentOnFeed",
   async ({ postId, comment }, thunkAPI) => {
     try {
-      const resp = await axios.patch(`/api/v1/feed/${postId}`, { comment });
+      const resp = await axios.patch(`https://instaclone-j0b8.onrender.com/api/v1/feed/${postId}`, { comment });
 
       return resp.data;
     } catch (error) {
@@ -96,14 +96,14 @@ export const commentOnFeed = createAsyncThunk(
 export const deleteFeed = createAsyncThunk(
   "feed/deleteFeed",
   async (postId, thunkAPI) => {
-    
+
     try {
-      const resp = await axios.delete(`/api/v1/feed/${postId}`, {
+      const resp = await axios.delete(`https://instaclone-j0b8.onrender.com/api/v1/feed/${postId}`, {
         headers: {
           authorization: `Bearer ${getUserFromLocalStorage().token}`,
         },
       });
-    
+
       return resp.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.msg);
@@ -115,7 +115,7 @@ export const getAllFeeds = createAsyncThunk(
   "feed/getAllFeeds",
   async (_, thunkAPI) => {
     try {
-      const resp = await axios.get(`/api/v1/feed/`, {
+      const resp = await axios.get(`https://instaclone-j0b8.onrender.com/api/v1/feed/`, {
         headers: {
           authorization: `Bearer ${getUserFromLocalStorage().token}`,
         },

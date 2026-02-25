@@ -19,7 +19,7 @@ export const registerUser = createAsyncThunk(
   "user/registerUser",
   async (user, thunkAPI) => {
     try {
-      const resp = await axios.post("/api/v1/auth/register", user);
+      const resp = await axios.post("https://instaclone-j0b8.onrender.com/api/v1/auth/register", user);
 
       return resp.data;
     } catch (error) {
@@ -32,7 +32,7 @@ export const loginUser = createAsyncThunk(
   "user/loginUser",
   async (user, thunkAPI) => {
     try {
-      const resp = await axios.post("api/v1/auth/login", user);
+      const resp = await axios.post("https://instaclone-j0b8.onrender.com/api/v1/auth/login", user);
 
       return resp.data;
     } catch (error) {
@@ -45,7 +45,7 @@ export const getUserProfile = createAsyncThunk(
   "user/userProfile",
   async (id, thunkAPI) => {
     try {
-      const resp = await axios.get(`/api/v1/user/userProfile/${id}`);
+      const resp = await axios.get(`https://instaclone-j0b8.onrender.com/api/v1/user/userProfile/${id}`);
 
       return resp.data;
     } catch (error) {
@@ -59,7 +59,7 @@ export const searchUser = createAsyncThunk(
   async (username, thunkAPI) => {
     try {
       const resp = await axios.get(
-        `/api/v1/user/search/user?search=${username}`,
+        `https://instaclone-j0b8.onrender.com/api/v1/user/search/user?search=${username}`,
         {
           headers: {
             authorization: `Bearer ${getUserFromLocalStorage().token}`,
@@ -78,7 +78,7 @@ export const userUpdate = createAsyncThunk(
   "user/userUpdate",
   async (user, thunkAPI) => {
     try {
-      const resp = await axios.patch("/api/v1/user/user", user, {
+      const resp = await axios.patch("https://instaclone-j0b8.onrender.com/api/v1/user/user", user, {
         headers: {
           authorization: `Bearer ${getUserFromLocalStorage().token}`,
         },
@@ -96,7 +96,7 @@ export const followUser = createAsyncThunk(
   async ({ userId }, thunkAPI) => {
     try {
       const resp = await axios.patch(
-        `/api/v1/user/followUser`,
+        `https://instaclone-j0b8.onrender.com/api/v1/user/followUser`,
         { userId },
         {
           headers: {
@@ -117,7 +117,7 @@ export const unFollowUser = createAsyncThunk(
   async ({ userId }, thunkAPI) => {
     try {
       const resp = await axios.patch(
-        `/api/v1/user/unFollowUser`,
+        `https://instaclone-j0b8.onrender.com/api/v1/user/unFollowUser`,
         { userId },
         {
           headers: {
